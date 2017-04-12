@@ -1,0 +1,36 @@
+<html lang="ja" ng-app="app">
+<head>
+<meta charset="UTF-8">
+<title>AnglarJS+PHP+MySQL</title>
+</head>
+<body ng-color="MainCtrl">
+	<h1>AnglarJS+PHP+MySQLを体感するWebページ</h1>
+	<table border="1">
+		<tr>
+			<th>ID</th>
+			<th>名前</th>
+			<th>年齢</th>
+			<th>コメント</th>
+		</tr>
+		<tr ng-controller="DetailCtrl" ng-repeat="student in students">
+			<td>{{student.id}}</td>
+			<td><input ng-model="student.name"></td>
+			<td><input ng-model="student.age"></td>
+			<td><input ng-model="student.comment"></td>
+			<td><button ng-click="update()">更新</td>
+			<td><button ng-click="delete()">削除</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td><input ng-model="new_student.name"></td>
+			<td><input ng-model="new_student.age"></td>
+			<td><input ng-model="new_student.comment"></td>
+			<td><button ng-click="add()">追加</button></td>
+			<td>&nbsp;</td>
+		</tr>
+	</table>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-resource.min.js"></script>
+	<script src="controller.js"></script>
+</body>
+</html>
